@@ -1,15 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/tailwind.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/tailwind.css" />
     <title>Document</title>
-</head>
-<body class="bg-gray-200 h-100 text-black px-12 py-12">
-    <h1 class="underline text-3xl">
-        Hello World
-    </h1>
-</body>
+  </head>
+  <nav
+    class="font-sans flex flex-col text-center sm:flex-row sm:text-left sm:justify-between py-4 px-6 bg-white shadow sm:items-baseline w-full"
+  >
+    <div class="mb-2 sm:mb-0">
+      <a
+        href="/"
+        class="text-2xl no-underline text-grey-darkest hover:text-blue-dark"
+        >Job Portal</a
+      >
+    </div>
+    <div class="space-x-8">
+      <a
+        href="/login.html"
+        class="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2"
+        >Login</a
+      >
+      <a
+        href="/signup.html"
+        class="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2"
+        >Signup</a
+      >
+      <a
+        href="/three"
+        class="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2"
+        >Logout</a
+      >
+    </div>
+  </nav>
+  <body class="bg-gray-200 h-100 text-black px-12 py-12">
+    <!-- modal -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDIHGNPo0eVQGe3lxldndz5_aTUEIHbEbA",
+        authDomain: "no-framework-firebase.firebaseapp.com",
+        projectId: "no-framework-firebase",
+        storageBucket: "no-framework-firebase.appspot.com",
+        messagingSenderId: "292492638141",
+        appId: "1:292492638141:web:7a13e112a15c4fe50144d4",
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+    </script>
+  </body>
 </html>
