@@ -4,46 +4,54 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/tailwind.css" />
+    <link rel="stylesheet" href="./css/materialize.min.css" />
     <title>Document</title>
   </head>
-  <nav
-    class="font-sans flex flex-col text-center sm:flex-row sm:text-left sm:justify-between py-4 px-6 bg-white shadow sm:items-baseline w-full"
-  >
-    <div class="mb-2 sm:mb-0">
-      <a
-        href="/"
-        class="text-2xl no-underline text-grey-darkest hover:text-blue-dark"
-        >Job Portal</a
-      >
-    </div>
-    <div class="space-x-8">
-      <a
-        href="/login.html"
-        class="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2"
-        >Login</a
-      >
-      <a
-        href="/signup.html"
-        class="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2"
-        >Signup</a
-      >
-      <a
-        href="/three"
-        class="text-lg no-underline text-grey-darkest hover:text-blue-dark ml-2"
-        >Logout</a
-      >
-    </div>
-  </nav>
-  <body class="bg-gray-200 h-100 text-black px-12 py-12">
+
+  <body class="">
+    <nav class="px-5">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Job Portal</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a class="modal-trigger" href="#modal1">Login</a></li>
+          <li><a class="modal-trigger" href="#modal2">Sign up</a></li>
+          <li><a href="/index.html">Logout</a></li>
+        </ul>
+      </div>
+    </nav>
     <!-- modal -->
+    <!-- LOGIN MODAL STRUCTURE -->
+    <div id="modal1" class="modal">
+      <h2 class="center-align">LOGIN</h2>
+      <div class="modal-content">
+        <form action="">
+          <input type="email" id="loginEmail" placeholder="Enter Email" />
+          <input type="password" id="loginPassword" placeholder="Enter Password" />
+          <input class="btn bg-green-200" type="submit" id="" />
+        </form>
+      </div>
+    </div>
+
+    <!--SIGNUP Modal Structure -->
+    <div id="modal2" class="modal">
+      <h2 class="center-align">SIGN UP</h2>
+      <div class="modal-content">
+        <form action="">
+          <input type="email" id="signupEmail" placeholder="Enter Email" />
+          <input type="password" id="signupPassword" placeholder="Enter Password" />
+          <input class="btn bg-green-200" type="submit" name="" id="" />
+        </form>
+      </div>
+    </div>
+
+    <script src="./js/materialize.min.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script> -->
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 
-    <script>
+    <!-- <script>
       // Your web app's Firebase configuration
       var firebaseConfig = {
         apiKey: "AIzaSyDIHGNPo0eVQGe3lxldndz5_aTUEIHbEbA",
@@ -55,6 +63,13 @@
       };
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
+    </script> -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var elems = document.querySelectorAll(".modal");
+        var instances = M.Modal.init(elems);
+      });
     </script>
   </body>
 </html>
