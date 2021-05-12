@@ -26,8 +26,12 @@
       <div class="modal-content">
         <form action="">
           <input type="email" id="loginEmail" placeholder="Enter Email" />
-          <input type="password" id="loginPassword" placeholder="Enter Password" />
-          <input class="btn bg-green-200" type="submit" id="" />
+          <input
+            type="password"
+            id="loginPassword"
+            placeholder="Enter Password"
+          />
+          <input class="btn bg-green-200" type="submit" />
         </form>
       </div>
     </div>
@@ -36,22 +40,27 @@
     <div id="modal2" class="modal">
       <h2 class="center-align">SIGN UP</h2>
       <div class="modal-content">
-        <form action="">
+        <form action="" onsubmit="signUp(event)">
           <input type="email" id="signupEmail" placeholder="Enter Email" />
-          <input type="password" id="signupPassword" placeholder="Enter Password" />
-          <input class="btn bg-green-200" type="submit" name="" id="" />
+          <input
+            type="password"
+            id="signupPassword"
+            placeholder="Enter Password"
+          />
+          <button class="btn bg-green-200" type="submit">Submit</button>
         </form>
       </div>
     </div>
 
     <script src="./js/materialize.min.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <!-- <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-auth.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
 
-    <!-- <script>
+    <script>
       // Your web app's Firebase configuration
       var firebaseConfig = {
         apiKey: "AIzaSyDIHGNPo0eVQGe3lxldndz5_aTUEIHbEbA",
@@ -63,7 +72,7 @@
       };
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
-    </script> -->
+    </script>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -71,5 +80,6 @@
         var instances = M.Modal.init(elems);
       });
     </script>
+    <script src="./js/auth.js"></script>
   </body>
 </html>
