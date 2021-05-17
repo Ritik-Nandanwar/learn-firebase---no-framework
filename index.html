@@ -12,9 +12,10 @@
     <nav class="px-5">
       <div class="nav-wrapper">
         <a href="#" class="left-align">Job Portal</a>
-        <ul id="nav-mobile" class="right ">
+        <ul id="nav-mobile" class="right">
           <li><a class="modal-trigger" href="#modal1">Login</a></li>
           <li><a class="modal-trigger" href="#modal2">Sign up</a></li>
+          <li><a class="modal-trigger" href="#modal3">Update Profile</a></li>
           <li><a onclick="logout()">Logout</a></li>
         </ul>
       </div>
@@ -32,7 +33,10 @@
             placeholder="Enter Password"
           />
           <input class="btn bg-green-200" type="submit" />
-            <button class="btn btn-blue waves-effect" onclick="loginInWithGoogle()">
+          <button
+            class="btn btn-blue waves-effect"
+            onclick="loginInWithGoogle()"
+          >
             Login with Google
           </button>
         </form>
@@ -54,6 +58,40 @@
         </form>
       </div>
     </div>
+    <div id="modal3" class="modal">
+      <h2 class="center-align">Edit Profile</h2>
+      <div class="modal-content">
+        <form action="" id="editProfileForm" onsubmit="updateUserProfile(event)">
+          <input \
+          type="email" 
+          name="profileEmail" 
+          placeholder="Enter Email" 
+          />
+          <input
+            type="text"
+            name="profileName"
+            placeholder="Enter Name"
+          />
+          <input
+            type="text"
+            name="profilePhone"
+            placeholder="Enter Phone number"
+          />
+          <input
+            type="text"
+            name="profileSpeciality"
+            placeholder="Enter Your Specilaity"
+          />
+          <input
+            type="text"
+            name="profilePortfolioUrl"
+            placeholder="Enter Your Portfolio URL"
+          />
+          <button class="btn bg-green-200" type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+    <div class="userInfo center-align"></div>
 
     <script src="./js/materialize.min.js"></script>
     <!-- The core Firebase JS SDK is always required and must be listed first -->
@@ -85,5 +123,6 @@
       });
     </script>
     <script src="./js/auth.js"></script>
+    <script src="./js/firestore.db.js"></script>
   </body>
 </html>

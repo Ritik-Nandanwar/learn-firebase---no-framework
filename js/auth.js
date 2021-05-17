@@ -11,6 +11,7 @@ signUp = async (event) => {
       await result.user.updateProfile({
           displayName: "User"
       })
+      createUserCollection(result.user)
       await result.user.sendEmailVerification()
     M.toast({ html: `Welcome ${result.user.email} !`, classes: "green" });
 
@@ -53,8 +54,12 @@ const logout = () => {
 const unsubscribe = firebase.auth().onAuthStateChanged((user) => {
   if (user) {
     var uid = user.uid;
+    displayUserInfoInRealTime(uid)
+
     console.log(user);
   } else {
+    displayUserInfo(null)
+
     console.log("Not logged in");
   }
 });
